@@ -22,7 +22,13 @@ end
 
 group :development, :test  do
   gem 'sqlite3'
+end
+
+group :test do
   gem 'rspec-rails'
   gem 'teaspoon'
   gem 'jasmine-rails'
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
+  gem 'capybara'
 end
