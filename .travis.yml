@@ -5,6 +5,8 @@ rvm:
 
 bundler_args: --without production
 
+script: "./run-tests.sh"
+
 deploy:
   provider: heroku
   api_key:
