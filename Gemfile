@@ -40,3 +40,6 @@ gem 'spring',        group: :development
 # DB gems
 gem 'pg', group: :production
 gem 'sqlite3', group: [:development, :test]
+
+# Heroku integration gem
+gem 'rails_12factor', group: :production
