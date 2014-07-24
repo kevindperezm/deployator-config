@@ -43,3 +43,5 @@ gem 'sqlite3', group: [:development, :test]
 
 # Heroku integration gem
 gem 'rails_12factor', group: :production
+
+gem 'haml-rails'
