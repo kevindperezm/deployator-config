@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'apps#index'
+  root 'home#index'
 
   get 'apps' => 'apps#index'
   get 'bot_config' => 'bot_config#index'
