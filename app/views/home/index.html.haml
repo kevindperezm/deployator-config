@@ -2,4 +2,4 @@
   .jumbotron.text-center
     %h1 Deployator
     %h3 Friendly bot that deploys your apps
-    = link_to 'Sign in with your crowdint account', google_apps_sign_in_path, class: 'btn btn-lg btn-primary'
+    = link_to 'Sign in with your crowdint account', '/users/auth/google_apps', class: 'btn btn-lg btn-primary', id: 'login', 'data-no-turbolink' => true
