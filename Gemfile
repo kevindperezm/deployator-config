@@ -28,6 +28,7 @@ group :development, :test  do
   gem 'jasmine-rails'
   gem 'cucumber-rails', require: false
   gem 'capybara'
+  gem 'selenium-webdriver'
 end
 
 group :test do
