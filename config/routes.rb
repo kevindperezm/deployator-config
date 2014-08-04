@@ -9,5 +9,4 @@ Rails.application.routes.draw do
   end
 
   devise_for :users, controllers: {omniauth_callbacks: 'crowdint_auth/omniauth_callbacks'}
->>>>>>> redirect to apps path when successful login
 end
