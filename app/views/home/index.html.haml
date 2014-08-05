@@ -1,5 +1,28 @@
-.container-fluid
+#wrapper.container-fluid
   .jumbotron.text-center
     %h1 Deployator
     %h3 Friendly bot that deploys your apps
-    = link_to 'Sign in with your crowdint account', '/users/auth/google_apps', class: 'btn btn-lg btn-primary', id: 'login', 'data-no-turbolink' => true
+    = link_to 'Sign in with your Crowdint account', '/users/auth/google_apps', class: 'btn btn-lg btn-primary', id: 'login', 'data-no-turbolink' => true
+
+  #wh_questions.row
+    #what.text-center.col-md-4
+      %h3 what
+      Deployator is a custom Hubot, enhanced to do deployment from GitHub to Heroku of a configurable set of apps. It listens to your Slack team chat at specific channels, waiting for you to request a deploy. It can also do basic Hubot stuff, like "image me" or "translate me" commands.
+    #who.text-center.col-md-4
+      %h3 who
+      Deployator is intended to be used by developers that love doing things the easy way and living easy lifes. It gives them a robotic arm in the deployment process, making possible to everyone to deploy an app from the Slack chat. There's no need to know where is the code hosted and how to deploy to Heroku and stuff. Just ask Deployator to do it for you!
+    #why.text-center.col-md-4
+      %h3 why
+      Deployator can make easy for you and your colleagues to deploy large apps, deploy many apps at once and do other things while deploying. Imagine that your client wants to have the last version of theirs app in its production environment but you're simply too busy to do it right now. Thanks to Deployator, your client can deploy the app by themselves.
+  #how.text-center
+    %h3 how
+    %ol.steps
+      %li Deploy your own instance of Deployator customized with your personal data (e.g. Slack team url, your own GitHub and Heroku access tokens). You can get the code here.
+      %li Teach Deployator which channels of your chat should it listen and which apps should it deploy when requested.
+      %li For each app, teach Deployator where to take the code from and the deployment environments to deploy to.
+      %li Deployator works side by side with GitHub's API, so add a HerokuBeta GitHub service to every deployable repo.
+      %li Sit and watch Deployator in action! You can always teach your bot about new apps or change details with Deployator's config web site.
+  #hubot
+    = image_tag 'hubot.png', alt: 'hubot icon'
+    #hubot_ballon
+      ONE IS GLAD TO BE OF SERVICE
