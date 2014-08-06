@@ -1,5 +1,5 @@
-Given /^I have visited the login page$/ do
-  visit google_apps_sign_in_path
+Given /^I am at (.*)$/ do |location|
+  visit path_to(location)
 end
 
 Given /^I have entered (.*) as the user$/ do |user|
@@ -14,10 +14,11 @@ When /^I click the login button$/ do
   click_on 'signIn'
 end
 
-When /^I approve access to my data$/ do
-  click_on 'submit_approve_access'
+When /^I give access permission if needed$/ do
+  button = find_button('submit_approve_access')
+  button && button.click
 end
 
 Then /^I should see the apps dashboard page$/ do
-  current_path == '/apps'
+  expect(current_path).to eql apps_path
 end

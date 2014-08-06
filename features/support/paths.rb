@@ -2,7 +2,7 @@ module NavigationHelpers
   def path_to(page_name)
     case page_name
     when /the login page/
-      root_path
+      new_user_session_path
     end
   end
 end
