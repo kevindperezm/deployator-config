@@ -22,6 +22,7 @@ body {
 #how {
   @include block;
   margin-top: 2em;
+  background: #EEEEEC;
   ol {
     counter-reset: li;
     li:before {
@@ -32,8 +33,8 @@ body {
       border-radius: 50%;
       font-size: 2em;
       font-weight: bold;
-      padding-left: 0.66em;
-      padding-top: 0.32em;
+      padding-left: 0.73em;
+      padding-top: 0.25em;
       background: $circle_bgcolor;
       color: $circle_color;
     }
@@ -68,7 +69,6 @@ body {
       font-weight: bold;
       padding: 0.5em;
       padding-top: 1.5em;
-      color: #666;
     }
   }
 }
