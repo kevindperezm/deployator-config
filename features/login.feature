@@ -5,9 +5,8 @@ Feature: Login
 
   @javascript
   Scenario: Login with kevin.perez@crowdint.com account
-    Given I am at the login page
-    And I have entered kevin.perez@crowdint.com as the user
-    And I have entered crowdsmkd123? as the password
-    When I click the login button
-    And I give access permission if needed
+    Given I am at the home page
+    And I click the sign in button
+    When I sign in
+    And I authorize the app
     Then I should see the apps dashboard page

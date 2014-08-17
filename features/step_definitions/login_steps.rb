@@ -1,24 +1,33 @@
-Given /^I am at (.*)$/ do |location|
-  visit path_to(location)
+Given /^I am at the (.*) page$/ do |page|
+  case page
+  when 'home'
+    visit root_path
+  end
 end
 
-Given /^I have entered (.*) as the user$/ do |user|
-  fill_in 'Email', with: user
+Given /^I click the (.*) button$/ do |button|
+  case button
+  when 'sign in'
+    click_on 'login'
+  when 'login'
+    click_on 'signIn'
+  end
 end
 
-Given /^I have entered (.*) as the password$/ do |password|
-  fill_in 'Passwd', with: password
-end
-
-When /^I click the login button$/ do
+When /^I sign in$/ do
+  fill_in 'Email', with: 'kevin.perez@crowdint.com'
+  fill_in 'Passwd', with: 'crowdsmkd123?'
   click_on 'signIn'
 end
 
-When /^I give access permission if needed$/ do
-  button = find_button('submit_approve_access')
-  button && button.click
+When /^I authorize the app$/ do
+  sleep 60
+  click_on 'Aceptar'
 end
 
-Then /^I should see the apps dashboard page$/ do
-  expect(current_path).to eql apps_path
+Then /^I should see the (.*) page$/ do |page|
+  case page
+  when 'apps dashboard'
+    expect(current_path).to eql apps_path
+  end
 end
