@@ -17,6 +17,7 @@ class BotConfigController < ApplicationController
   private
 
   def delete_previous_config
+    BotConfig.apart_from(@config).delete_all
   end
 
   def config_params
