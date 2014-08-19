@@ -1,3 +1,42 @@
-%h1 Bot config
-%a{href: '/apps'} Apps dashboard
-= link_to 'Logout', destroy_user_session_path, method: :delete
+.container-fluid
+  .row
+    .col-xs-12
+      %h1 Bot config
+  .row
+    .col-xs-12
+      %a{href: '/apps'} Apps dashboard
+      = link_to 'Logout', destroy_user_session_path, method: :delete
+
+  .row
+    .col-xs-12.well
+      = form_for @bot_config, action: bot_config_save_path, method: :post, remote: true do |f|
+        = f.label :bot_name
+        = f.text_field :bot_name, class: 'form-control'
+        = f.label :bot_url
+        = f.text_field :bot_url, class: 'form-control'
+        %hr
+        = f.label :slack_team
+        = f.text_field :slack_team, class: 'form-control'
+        = f.label :slack_token
+        .input-group
+          = f.password_field :slack_token, class: 'form-control', value: @bot_config.slack_token
+          %a.show-token.input-group-addon{href: '#'}
+            Show token
+        %hr
+        = f.label :github_organization
+        = f.text_field :github_organization, class: 'form-control'
+        = f.label :github_token
+        .input-group
+          = f.password_field :github_token, class: 'form-control', value: @bot_config.github_token
+          %a.show-token.input-group-addon{href: '#'}
+            Show token
+
+        = f.submit 'Save', class: 'btn btn-primary btn-lg'
+
+  .row.command
+    #config_command.col-xs-12
+
+  .row.command
+    #command_instructions.col-xs-12
+      %p
+        Run this command inside your deployator folder using the Heroku toolbelt.
