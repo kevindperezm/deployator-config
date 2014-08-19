@@ -34,6 +34,9 @@ RSpec.describe BotConfigController, :type => :controller do
     end
 
     it 'preserves only the last config saved' do
+      post 'save', bot_config: bot_config_values
+      post 'save', bot_config: bot_config_values
+      post 'save', bot_config: bot_config_values
       expect(BotConfig.count).to eql 1
     end
   end
