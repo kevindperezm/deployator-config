@@ -3,7 +3,7 @@ require 'command_builder'
 class BotConfigController < ApplicationController
   before_action :authenticate_user!
 
-  def index
+  def show
     @bot_config = BotConfig.last
   end
 

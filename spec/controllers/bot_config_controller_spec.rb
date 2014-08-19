@@ -45,7 +45,7 @@ RSpec.describe BotConfigController, :type => :controller do
     it 'loads the last saved config' do
       post 'save', bot_config: bot_config_values
       post 'save', bot_config: bot_config_values
-      get :index
+      get :show
       bot_config = subject.instance_variable_get :@bot_config
       expect(bot_config).to eql BotConfig.last
     end
