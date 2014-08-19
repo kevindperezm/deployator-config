@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  root 'login#index'
+  root 'home#index'
 
   get 'apps' => 'apps#index'
   get 'bot_config' => 'bot_config#index'
+
+  devise_for :users, controllers: {omniauth_callbacks: 'omniauth_callbacks'}
 end

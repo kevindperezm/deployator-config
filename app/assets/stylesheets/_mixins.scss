@@ -1,0 +1,22 @@
+@mixin abs($left, $top: "", $right: "", $bottom: "") {
+  position: absolute;
+  left: $left;
+  top: unquote($top);
+  right: unquote($right);
+  bottom: unquote($bottom);
+}
+
+@mixin size($width, $height: "") {
+  width: $width;
+  height: unquote($height);
+}
+
+@mixin round {
+  border-radius: 0.3em;
+}
+
+@mixin block {
+  @include round;
+  padding: 1em;
+  background: $block_color;
+}

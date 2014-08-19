@@ -1,0 +1,74 @@
+@import 'mixins';
+@import 'bubble';
+
+$block_color: #DDD;
+$clean_color: #FFF;
+$circle_color: #FFF;
+$circle_bgcolor: #CCC;
+
+body {
+  font-family: Ubuntu !important;
+  background: #EEEEEC !important;
+}
+
+.wh-block {
+  @include block;
+  display: inline-block;
+  width: 90%;
+  height: 30em;
+  h1 { margin-bottom: 0em; }
+}
+
+#how {
+  @include block;
+  margin-top: 2em;
+  background: #EEEEEC;
+  ol {
+    counter-reset: li;
+    li:before {
+      @include abs(-2.4em, 0.5em);
+      @include size(2em, 2em);
+      counter-increment: li;
+      content: counter(li);
+      border-radius: 50%;
+      font-size: 2em;
+      font-weight: bold;
+      padding-left: 0.73em;
+      padding-top: 0.25em;
+      background: $circle_bgcolor;
+      color: $circle_color;
+    }
+    li {
+      @include round;
+      position: relative;
+      margin-bottom: 1.5em;
+      margin-left: 2em;
+      background: $clean_color;
+      padding: 1.5em;
+      text-align: left;
+      list-style: none;
+      height: 6em;
+    }
+  }
+}
+
+#hubot {
+  position: relative;
+  margin-top: 2em;
+  text-align: center;
+  .wrapper {
+    display: inline-block;
+    img {
+      position: relative;
+      top: -1.5em;
+      margin-right: 1em;
+    }
+    .bubble {
+      text-align: center;
+      font-size: 1.6em;
+      font-weight: bold;
+      padding: 0.5em;
+      padding-top: 1.5em;
+    }
+  }
+}

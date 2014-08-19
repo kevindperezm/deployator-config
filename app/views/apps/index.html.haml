@@ -1,3 +1,3 @@
 %h1 Apps dashboard
 %a{href: '/bot-config'} Bot config
-%a{href: '/'} Logout
+= link_to 'Logout', destroy_user_session_path, method: :delete

@@ -28,6 +28,18 @@ require 'cucumber/rails'
 #
 ActionController::Base.allow_rescue = false
 
+# OmniAuth configuration for cucumber tests
+OmniAuth.configure do |config|
+  config.test_mode = true
+  config.add_mock :default, {
+    :info => {
+      :email => 'foobar@crowdint.com',
+      :name => 'foo',
+      :password => 'qwerty123'
+    }
+  }
+end
+
 # Remove/comment out the lines below if your app doesn't have a database.
 # For some databases (like MongoDB and CouchDB) you may need to use :truncation instead.
 begin
@@ -56,3 +68,4 @@ end
 # See https://github.com/cucumber/cucumber-rails/blob/master/features/choose_javascript_database_strategy.feature
 Cucumber::Rails::Database.javascript_strategy = :truncation
 
+Capybara.server_port = 3001

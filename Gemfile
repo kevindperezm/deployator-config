@@ -12,8 +12,9 @@ gem 'jbuilder', '~> 2.0'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'spring', group: :development
-
 gem 'haml-rails'
+gem 'devise'
+gem 'omniauth-google-oauth2'
 
 group :production do
   gem 'pg'
@@ -27,6 +28,7 @@ group :development, :test  do
   gem 'jasmine-rails'
   gem 'cucumber-rails', require: false
   gem 'capybara'
+  gem 'selenium-webdriver'
 end
 
 group :test do
