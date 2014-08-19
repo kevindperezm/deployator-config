@@ -12,6 +12,8 @@ class BotConfigController < ApplicationController
     if @config.save
       delete_previous_config
       render json: { command: generate_command_for(@config) }, status: :created
+    else
+      head :unprocessable_entity
     end
   end
 
