@@ -3,6 +3,7 @@ Feature: Set Slack and GitHub tokens
   I want to set the Slack and GitHub tokens
   so I can talk to the bot from the chat
 
+  @javascript
   Scenario: Configuring bot for MyTeam organization
     Given I sign in
     And I am at the bot config page
@@ -15,6 +16,7 @@ Feature: Set Slack and GitHub tokens
     Then I should see heroku config:set HUBOT_SLACK_TOKEN=asd344j3k5jj2kj342 HUBOT_BOT_NAME=deployator HUBOT_SLACK_TEAM=MyTeam HUBOT_GITHUB_TOKEN=asd344j3k5jj2kj34
     And I should see instructions of what to do with the command
 
+  @javascript
   Scenario: Configuring bot for AwesomeTeam organization
     Given I sign in
     And I am at the bot config page
