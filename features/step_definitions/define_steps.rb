@@ -1,4 +1,4 @@
-Given /^I am at (.*) page$/ do |page|
+Given /^I am at (.*)$/ do |page|
   case page
   when 'the bot config page'
     visit bot_config_path
@@ -11,7 +11,7 @@ When /^I sign in$/ do
 end
 
 When /^I put (.*) as (.*)$/ do |value, field|
-  field.gsub!(' ', '_').downcase!
+  field = 'bot_config_' << field.gsub(' ', '_').downcase
   fill_in field, with: value
 end
 
