@@ -40,4 +40,14 @@ RSpec.describe BotConfigController, :type => :controller do
       expect(BotConfig.count).to eql 1
     end
   end
+
+  describe '#index' do
+    it 'loads the last saved config' do
+      post 'save', bot_config: bot_config_values
+      post 'save', bot_config: bot_config_values
+      get :index
+      bot_config = subject.instance_variable_get :@bot_config
+      expect(bot_config).to eql BotConfig.last
+    end
+  end
 end
