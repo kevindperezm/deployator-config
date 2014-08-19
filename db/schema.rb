@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140806162805) do
+ActiveRecord::Schema.define(version: 20140819042548) do
+
+  create_table "bot_configs", force: true do |t|
+    t.string   "bot_url"
+    t.string   "bot_name"
+    t.string   "slack_team"
+    t.string   "slack_token"
+    t.string   "github_organization"
+    t.string   "github_token"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",               default: "", null: false
