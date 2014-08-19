@@ -1,3 +1,5 @@
+require 'command_builder'
+
 class BotConfigController < ApplicationController
   before_action :authenticate_user!
 
@@ -24,5 +26,6 @@ class BotConfigController < ApplicationController
   end
 
   def generate_command_for(config)
+    CommandBuilder.build_from config
   end
 end
