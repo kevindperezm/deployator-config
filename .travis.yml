@@ -5,6 +5,10 @@ rvm:
 
 bundler_args: --without staging production
 
+before_script:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+
 script: "./run-tests.sh"
 
 deploy:
