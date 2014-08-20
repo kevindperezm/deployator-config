@@ -11,7 +11,7 @@ class CommandBuilder
 
   def build
     "heroku config:set " <<
-    "HUBOT_BOT_NAME=#{@config.bot_name} " <<
+    "HUBOT_SLACK_BOTNAME=#{@config.bot_name} " <<
     "HUBOT_SLACK_TEAM=#{@config.slack_team} " <<
     "HUBOT_SLACK_TOKEN=#{@config.slack_token} " <<
     "HUBOT_GITHUB_TOKEN=#{@config.github_token}"
