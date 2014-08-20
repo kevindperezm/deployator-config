@@ -1,3 +1,3 @@
-Before '@need_seeds' do
+Before '@needs_seeds' do
   load "#{Rails.root}/db/seeds.rb"
 end

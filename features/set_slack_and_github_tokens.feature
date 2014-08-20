@@ -4,7 +4,7 @@ Feature: Set Slack and GitHub tokens
   so I can talk to the bot from the chat
 
   @javascript
-  @need_seeds
+  @needs_seeds
   Scenario: Configuring bot for MyTeam organization
     Given I sign in
     And I am at the bot config page
@@ -19,7 +19,7 @@ Feature: Set Slack and GitHub tokens
     And I should see instructions of what to do with the command
 
   @javascript
-  @need_seeds
+  @needs_seeds
   Scenario: Configuring bot for AwesomeTeam organization
     Given I sign in
     And I am at the bot config page
