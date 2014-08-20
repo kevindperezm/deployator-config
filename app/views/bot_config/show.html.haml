@@ -31,12 +31,11 @@
           %a.show-token.input-group-addon{href: '#'}
             Show token
 
+        .command.alert.alert-success
+          #command_instructions
+            %p
+              %b Saved!
+              Now run this command inside your deployator folder. You will need to install the Heroku toolbelt if you haven't yet.
+          #config_command
+
         = f.submit 'Save', class: 'btn btn-primary btn-lg'
-
-  .row.command
-    #config_command.col-xs-12
-
-  .row.command
-    #command_instructions.col-xs-12
-      %p
-        Run this command inside your deployator folder using the Heroku toolbelt.
