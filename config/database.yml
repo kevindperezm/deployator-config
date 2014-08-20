@@ -32,6 +32,7 @@ production: &production
 staging:
  <<: *production
  host: ec2-54-197-241-79.compute-1.amazonaws.com
+ database: dbnccsenuua09s
  user: kzdfjatdxbtuqy
  password: l9g8KJzjk7DNaAogG7WyBhEIaE
 
