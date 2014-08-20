@@ -32,3 +32,12 @@ Feature: Set Slack and GitHub tokens
     And I click on Save
     Then I should see heroku config:set HUBOT_BOT_NAME=deployerbot HUBOT_SLACK_TEAM=AwesomeTeam HUBOT_SLACK_TOKEN=kj45kh56jk345 HUBOT_GITHUB_TOKEN=kj45kh56jk345
     And I should see instructions of what to do with the command
+
+@javascript
+@needs_seeds
+Scenario: Sending an invalid bot config
+  Given I sign in
+  And I am at the bot config page
+  When I put nothing as Slack team
+  And I click on Save
+  Then I should see an invalid config message

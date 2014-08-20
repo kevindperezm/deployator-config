@@ -10,6 +10,7 @@ When /^I sign in$/ do
 end
 
 When /^I put (.*) as (.*)$/ do |value, field|
+  value = '' if value == 'nothing'
   field = 'bot_config_' << field.gsub(' ', '_').downcase
   fill_in field, with: value
 end
@@ -24,6 +25,8 @@ Then /^I should see (.*)$/ do |what|
     expect(current_path).to eql apps_path
   when 'instructions of what to do with the command'
     expect(page).to have_css '#command_instructions'
+  when 'an invalid config message'
+    expect(page).to have_css '#invalid_config'
   else
     expect(page).to have_content(what)
   end
