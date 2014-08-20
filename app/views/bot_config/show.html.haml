@@ -38,4 +38,9 @@
               Now run this command inside your deployator folder. You will need to install the Heroku toolbelt if you haven't yet.
           #config_command
 
+        .error.alert.alert-danger
+          %p
+            %b Sorry!
+            There was an error when trying to save your's bot config. Please try again later.
+
         = f.submit 'Save', class: 'btn btn-primary btn-lg'
