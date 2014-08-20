@@ -1,9 +1,11 @@
 $ ->
   $('.show-token').click (e) ->
     e.preventDefault()
-    $(@)
-    .prev()
-    .attr 'type', 'text'
+    type = $(@).prev().attr 'type'
+    if type == 'password'
+      $(@).text('Hide token').prev().attr 'type', 'text'
+    else
+      $(@).text('Show token').prev().attr 'type', 'password'
 
   $('form').on 'click', 'input[type=submit]', (e) ->
     $(@).val 'Saving...'
