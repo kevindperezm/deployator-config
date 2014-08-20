@@ -20,7 +20,7 @@ test: &test
   <<: *default
   database: db/test.sqlite3
 
-production:
+production: &production
   <<: *default
   adapter: postgresql
   host: ec2-174-129-197-200.compute-1.amazonaws.com
@@ -28,6 +28,12 @@ production:
   database: dbmkv6tkiamqli
   user: tgfytbndcnueac
   password: lGvCKW-T70N10OUVJjF06Ifx4f
+
+staging:
+ <<: *production
+ host: ec2-54-197-241-79.compute-1.amazonaws.com
+ user: kzdfjatdxbtuqy
+ password: l9g8KJzjk7DNaAogG7WyBhEIaE
 
 cucumber:
   <<: *test
