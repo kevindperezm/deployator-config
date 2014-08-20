@@ -1,0 +1,12 @@
+#config_command {
+  background: #333;
+  color: white;
+  padding: 0.5em;
+  border-radius: 0.4em;
+}
+
+.command,
+.error {
+  margin-top: 1em;
+  display: none;
+}
