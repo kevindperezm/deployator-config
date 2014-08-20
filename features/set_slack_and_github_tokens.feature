@@ -41,3 +41,4 @@ Scenario: Sending an invalid bot config
   When I put nothing as Slack team
   And I click on Save
   Then I should see an invalid config message
+  And I should see the Save button

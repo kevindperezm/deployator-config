@@ -27,6 +27,8 @@ Then /^I should see (.*)$/ do |what|
     expect(page).to have_css '#command_instructions'
   when 'an invalid config message'
     expect(page).to have_css '#invalid_config'
+  when 'the Save button'
+    expect(page).to have_button 'Save'
   else
     expect(page).to have_content(what)
   end
