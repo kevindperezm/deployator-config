@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   # Redirects authentication failures
   def new_session_path(scope)
-    new_user_session_path
+    root_path
   end
 
   def after_sign_in_path_for(user)
