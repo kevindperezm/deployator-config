@@ -6,8 +6,7 @@ Given /^I am at (.*)$/ do |page|
 end
 
 When /^I sign in$/ do
-  visit root_path
-  click_on 'login'
+  visit user_omniauth_authorize_path provider: :google_oauth2
 end
 
 When /^I put (.*) as (.*)$/ do |value, field|
