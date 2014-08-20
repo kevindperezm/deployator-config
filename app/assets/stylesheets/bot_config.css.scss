@@ -6,7 +6,8 @@
 }
 
 .command,
-.error {
+.error,
+#invalid_config {
   margin-top: 1em;
   display: none;
 }
