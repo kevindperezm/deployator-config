@@ -11,6 +11,7 @@ $ ->
 
   $('form').on 'submit', (e) ->
     if validateForm(@)
+      $('#invalid_config').hide 'fast'
       submitButton.val 'Saving...'
     else
       e.preventDefault()
@@ -18,15 +19,11 @@ $ ->
       $('#invalid_config').show 'fast'
 
   $('form').bind 'ajax:success', (e, data, status, xhr) ->
-    $('#invalid_config').hide 'fast'
-    submitButton.hide 'fast'
     $('#config_command').text data.command
-    $('.command').show 'fast'
+    hideSubmitAndShow '.command', 'fast'
 
   $('form').bind 'ajax:error', (e, data, status, xhr) ->
-    $('#invalid_config').hide 'fast'
-    submitButton.hide 'fast'
-    $('.error').show 'fast'
+    hideSubmitAndShow '.error', 'fast'
 
   validateForm = (form) ->
     allFilled = true
@@ -34,3 +31,8 @@ $ ->
     fields.each ->
       allFilled = ($(@).val().trim() != '')
     allFilled
+
+  hideSubmitAndShow = (whatToShow, speed) ->
+    $('#invalid_config').hide speed
+    submitButton.hide speed
+    $(whatToShow).show speed
