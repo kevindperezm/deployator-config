@@ -9,11 +9,12 @@ RSpec.describe BotConfigController, :type => :controller do
       slack_team: 'MyTeam',
       slack_token: 'ASDaseef32432sdfds32',
       github_organization: 'MyGitHubTeam',
-      github_token: 'DFGHGREsadsfdgdfg424234'
+      github_token: 'DFGHGREsadsfdgdfg424234',
+      deploy_timeout: 15
     }
   end
   let :config_command do
-    "heroku config:set HUBOT_BOT_NAME=deployator HUBOT_SLACK_TEAM=MyTeam HUBOT_SLACK_TOKEN=ASDaseef32432sdfds32 HUBOT_GITHUB_TOKEN=DFGHGREsadsfdgdfg424234"
+    "heroku config:set HUBOT_SLACK_BOTNAME=deployator HUBOT_SLACK_TEAM=MyTeam HUBOT_SLACK_TOKEN=ASDaseef32432sdfds32 HUBOT_GITHUB_TOKEN=DFGHGREsadsfdgdfg424234 HUBOT_DEPLOY_TIMEOUT=15"
   end
 
   before :all do
