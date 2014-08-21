@@ -31,7 +31,7 @@
           %a.show-token.input-group-addon{href: '#'}
             Show token
         = f.label :deploy_timeout
-        = f.number_field :deploy_timeout
+        = f.number_field :deploy_timeout, class: 'form-control'
 
         #invalid_config.alert.alert-warning
           %p
