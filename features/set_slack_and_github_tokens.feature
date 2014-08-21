@@ -14,8 +14,9 @@ Feature: Set Slack and GitHub tokens
     And I put http://deployator.herokuapp.com as Bot url
     And I put MyTeam as GitHub organization
     And I put asd344j3k5jj2kj342 as GitHub token
+    And I put 5 as Deploy timeout
     And I click on Save
-    Then I should see heroku config:set HUBOT_SLACK_BOTNAME=deployator HUBOT_SLACK_TEAM=MyTeam HUBOT_SLACK_TOKEN=asd344j3k5jj2kj342 HUBOT_GITHUB_TOKEN=asd344j3k5jj2kj34
+    Then I should see heroku config:set HUBOT_SLACK_BOTNAME=deployator HUBOT_SLACK_TEAM=MyTeam HUBOT_SLACK_TOKEN=asd344j3k5jj2kj342 HUBOT_GITHUB_TOKEN=asd344j3k5jj2kj342 HUBOT_DEPLOY_TIMEOUT=5
     And I should see instructions of what to do with the command
 
   @javascript
@@ -29,8 +30,9 @@ Feature: Set Slack and GitHub tokens
     And I put deployerbot as Bot name
     And I put AwesomeTeam as GitHub organization
     And I put kj45kh56jk345 as GitHub token
+    And I put 10 as Deploy timeout
     And I click on Save
-    Then I should see heroku config:set HUBOT_SLACK_BOTNAME=deployerbot HUBOT_SLACK_TEAM=AwesomeTeam HUBOT_SLACK_TOKEN=kj45kh56jk345 HUBOT_GITHUB_TOKEN=kj45kh56jk345
+    Then I should see heroku config:set HUBOT_SLACK_BOTNAME=deployerbot HUBOT_SLACK_TEAM=AwesomeTeam HUBOT_SLACK_TOKEN=kj45kh56jk345 HUBOT_GITHUB_TOKEN=kj45kh56jk345 HUBOT_DEPLOY_TIMEOUT=10
     And I should see instructions of what to do with the command
 
 @javascript
