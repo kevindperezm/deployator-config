@@ -30,6 +30,8 @@
           = f.password_field :github_token, class: 'form-control', value: @bot_config.github_token
           %a.show-token.input-group-addon{href: '#'}
             Show token
+        = f.label :deploy_timeout
+        = f.number_field :deploy_timeout
 
         #invalid_config.alert.alert-warning
           %p
