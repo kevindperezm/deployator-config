@@ -26,7 +26,8 @@ class BotConfigController < ApplicationController
   def config_params
     params.require('bot_config').permit :bot_url, :bot_name,
                                         :slack_team, :slack_token,
-                                        :github_organization, :github_token
+                                        :github_organization, :github_token,
+                                        :deploy_timeout
   end
 
   def generate_command_for(config)
