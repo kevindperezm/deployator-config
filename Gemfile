@@ -16,7 +16,7 @@ gem 'haml-rails'
 gem 'devise'
 gem 'omniauth-google-oauth2'
 
-group :production do
+group :production, :staging do
   gem 'pg'
   gem 'rails_12factor'
 end

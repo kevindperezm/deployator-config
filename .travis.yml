@@ -3,7 +3,11 @@ language: ruby
 rvm:
   - 2.1.2
 
-bundler_args: --without production
+bundler_args: --without staging production
+
+before_script:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
 
 script: "./run-tests.sh"
 
@@ -11,6 +15,8 @@ deploy:
   provider: heroku
   api_key:
     secure: U9T8yit8nT1R7Zx5QFUo+bXg1K4jsIfMKXROY2snc7q6R3TBqyoF8ywD0h4xX4lbXCQMqNGSeBMGJwVtMavv4wjjgWxOO4CcWOWQUCw7sVc6CHzSux7ETi/OlNZzTbUIw+MTqWslFVVNff4mTYfTja/RAh/VgW+/30B/uVrfLXQ=
-  app: deployator-config
+  app:
+    master: deployator-config
+    staging: deployator-config-staging
   on:
     repo: kevindperezm/deployator-config
