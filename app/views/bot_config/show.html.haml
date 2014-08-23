@@ -7,6 +7,7 @@
       %a{href: '/apps'} Apps dashboard
       = link_to 'Logout', destroy_user_session_path, method: :delete
 
+
   .row
     .col-xs-12.well
       = form_for @bot_config, url: {action: 'save'}, method: :post, remote: true do |f|
@@ -51,3 +52,5 @@
             There was an error when trying to save your's bot config. Please try again later.
 
         = f.submit 'Save', class: 'btn btn-primary btn-lg'
+
+  = render 'partials/connect_instructions'
