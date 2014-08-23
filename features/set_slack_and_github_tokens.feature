@@ -18,6 +18,7 @@ Feature: Set Slack and GitHub tokens
     And I click on Save
     Then I should see heroku config:set HUBOT_SLACK_BOTNAME=deployator HUBOT_SLACK_TEAM=MyTeam HUBOT_SLACK_TOKEN=asd344j3k5jj2kj342 HUBOT_GITHUB_TOKEN=asd344j3k5jj2kj342 HUBOT_DEPLOY_TIMEOUT=5
     And I should see instructions of what to do with the command
+    And I should see instructions to connect with Slack
 
   @javascript
   @needs_seeds
@@ -34,6 +35,7 @@ Feature: Set Slack and GitHub tokens
     And I click on Save
     Then I should see heroku config:set HUBOT_SLACK_BOTNAME=deployerbot HUBOT_SLACK_TEAM=AwesomeTeam HUBOT_SLACK_TOKEN=kj45kh56jk345 HUBOT_GITHUB_TOKEN=kj45kh56jk345 HUBOT_DEPLOY_TIMEOUT=10
     And I should see instructions of what to do with the command
+    And I should see instructions to connect with Slack
 
 @javascript
 @needs_seeds

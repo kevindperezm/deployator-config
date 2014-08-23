@@ -29,6 +29,8 @@ Then /^I should see (.*)$/ do |what|
     expect(page).to have_css '#invalid_config'
   when 'the Save button'
     expect(page).to have_button 'Save'
+  when 'instructions to connect with Slack'
+    expect(page).to have_content 'How to connect with Slack'
   else
     expect(page).to have_content(what)
   end
