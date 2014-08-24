@@ -1,6 +1,10 @@
 Given /^I am at (.*)$/ do |page|
   case page
+  when 'the apps dashboard page'
+    visit apps_path
   when 'the bot config page'
+    visit bot_config_path
+  when 'the New App page'
     visit bot_config_path
   end
 end
@@ -31,7 +35,10 @@ Then /^I should see (.*)$/ do |what|
     expect(page).to have_button 'Save'
   when 'instructions to connect with Slack'
     expect(page).to have_content 'How to connect with Slack'
+  when 'the New App page'
+    expect(current_path).to eql new_app_path
   else
+    what.gsub! '"', ''
     expect(page).to have_content(what)
   end
 end
