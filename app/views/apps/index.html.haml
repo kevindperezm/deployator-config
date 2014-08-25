@@ -1,3 +1,33 @@
-%h1 Apps dashboard
-%a{href: '/bot-config'} Bot config
-= link_to 'Logout', destroy_user_session_path, method: :delete
+.container
+
+  %h1 Apps dashboard
+
+  = render 'partials/navbar'
+
+  %h4 Deployable apps
+
+  .row.well
+    .col-xs-12.col-sm-4.col-md-2
+      = link_to 'Add new app', new_app_path, class: 'btn btn-primary full-width'
+    .col-xs-12.col-sm-4.col-md-3.end
+      %select#with_selected.form-control.full-width
+        %option{value: 0} With selected do...
+
+  - if @apps.nil? || @apps.empty?
+    %p There aren't apps added yet.
+  - else
+    %p Click on an app name to edit
+    .table-responsive
+      %table#apps.table.table-striped
+        %tr
+          %th App name
+          %th Repository
+          %th Environments
+          %th Actions
+        - @apps.each do |app|
+          %tr
+            %td= link_to app.name, edit_app_path(app.id)
+            %td= app.repository
+            %td= app.environments.map { |env| env.name }.join(', ')
+            %td
+              = link_to 'Delete', app_path(app.id), method: 'delete', class: 'btn btn-danger'
