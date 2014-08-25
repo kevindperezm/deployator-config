@@ -4,8 +4,7 @@
       %h1 Bot config
   .row
     .col-xs-12
-      %a{href: '/apps'} Apps dashboard
-      = link_to 'Logout', destroy_user_session_path, method: :delete
+      = render 'partials/navbar'
 
 
   .row
