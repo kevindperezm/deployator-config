@@ -1,33 +1,48 @@
+.container-fluid
+  = render 'partials/navbar'
+
 .container
 
   %h1 Apps dashboard
 
-  = render 'partials/navbar'
+  - if @bot_connection_error
 
-  %h4 Deployable apps
+    .alert.alert-danger
+      %b There was an error when attempting to connect with your Deployator instance.
+      = "Is \"#{BotConfig.last.bot_url}\" your bot's url?"
+      If it isn't, check your
+      = link_to "bot's configuration.", bot_config_path
 
-  .row.well
-    .col-xs-12.col-sm-4.col-md-2
-      = link_to 'Add new app', new_app_path, class: 'btn btn-primary full-width'
-    .col-xs-12.col-sm-4.col-md-3.end
-      %select#with_selected.form-control.full-width
-        %option{value: 0} With selected do...
-
-  - if @apps.nil? || @apps.empty?
-    %p There aren't apps added yet.
   - else
-    %p Click on an app name to edit
-    .table-responsive
-      %table#apps.table.table-striped
-        %tr
-          %th App name
-          %th Repository
-          %th Environments
-          %th Actions
-        - @apps.each do |app|
+
+    %h4 Deployable apps
+    .row.well
+      .col-xs-12.col-sm-4.col-md-2
+        = link_to 'Add new app', new_app_path, class: 'btn btn-primary full-width'
+      .col-xs-12.col-sm-4.col-md-3.end
+        %select#with_selected.form-control.full-width
+          %option{value: 0} With selected do...
+
+    - if @apps.empty?
+
+      %p There aren't apps added yet.
+
+    - else
+
+      %p Click on an app name to edit
+
+      .table-responsive
+        %table#apps.table.table-striped
           %tr
-            %td= link_to app.name, edit_app_path(app.id)
-            %td= app.repository
-            %td= app.environments.map { |env| env.name }.join(', ')
-            %td
-              = link_to 'Delete', app_path(app.id), method: 'delete', class: 'btn btn-danger'
+            %th App name
+            %th Repository
+            %th Environments
+            %th Actions
+
+          - @apps.each do |app|
+            %tr
+              %td= link_to app.name, edit_app_path(app.id)
+              %td= app.repository
+              %td= app.environments.map { |env| env.name }.join(', ')
+              %td
+                = link_to 'Delete', app_path(app.id), method: 'delete', class: 'btn btn-danger'
