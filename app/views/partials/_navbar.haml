@@ -1,4 +1,11 @@
-%nav
-  %ul.page-navigation
-    %li= link_to 'Apps dashboard', apps_path
-    %li= link_to 'Bot configuration', bot_config_path
+%nav.navbar.navbar-default
+  .container-fluid
+    .navbar-header
+      %button.navbar-toggle{'data-toggle' => 'collapse', 'data-target' => '#nav_menu'}
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      #nav_menu.collapse.navbar-collapse
+        %ul.nav.navbar-nav
+          %li= link_to 'Apps dashboard', apps_path
+          %li= link_to 'Bot configuration', bot_config_path
