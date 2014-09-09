@@ -15,6 +15,7 @@ gem 'spring', group: :development
 gem 'haml-rails'
 gem 'devise'
 gem 'omniauth-google-oauth2'
+gem 'unirest'
 
 group :production, :staging do
   gem 'pg'
