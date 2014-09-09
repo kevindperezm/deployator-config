@@ -5,5 +5,5 @@ class BotConfig < ActiveRecord::Base
                         :deploy_timeout
   validates_numericality_of :deploy_timeout
 
-  scope :apart_from, lambda { |config| where('id != ?', config.id) }
+  scope :apart_from, ->(config) { where('id != ?', config.id) }
 end
